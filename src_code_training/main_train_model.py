@@ -4,15 +4,14 @@ from trainer import SimpleModelTrainerCpu
 import os
 from utils import Utils
 import random
-# import subprocess
+import subprocess
 
 
 Utils.print_gpu_info()
+subprocess.run("nvidia-smi")
 
-# subprocess.run("nvidia-smi")
 
-
-csv_files_dir = "/home/arjav.singh/Projects/DeepIO/Production_Data/SIDM/csvs"
+csv_files_dir = "/home/arjav.singh/Projects/DeepIO/Production_Data/SIDM/csvs" # <-- Update this with your csv file location
 good_csvs = []
 for dir in os.listdir(csv_files_dir):
     dir_path = os.path.join(csv_files_dir, dir)
@@ -30,7 +29,7 @@ for dir in os.listdir(csv_files_dir):
             csv_path = os.path.join(dir_path, f.replace(".png", ".csv"))
             good_csvs.append(csv_path)
 
-test_txt_file = "/home/arjav.singh/Projects/DeepIO/Production_Data/SIDM/src_code_training/test_data_traj/selected_test_traj.txt"
+test_txt_file = "/home/arjav.singh/Projects/DeepIO/Production_Data/SIDM/src_code_training/test_data_traj/selected_test_traj.txt" # <-- update this with test files location
 with open(test_txt_file, "r") as f:
     test_png_files = f.read().splitlines()
 
@@ -48,7 +47,7 @@ print(f"Number of test flights: {len(test_flights)}")
 print(f"Number of remaining good flights: {len(good_csvs)}")
 
 
-val_txt_file = "/home/arjav.singh/Projects/DeepIO/Production_Data/SIDM/src_code_training/val_data_traj/selected_val_traj.txt"
+val_txt_file = "/home/arjav.singh/Projects/DeepIO/Production_Data/SIDM/src_code_training/val_data_traj/selected_val_traj.txt" # <-- update this with val files location
 with open(val_txt_file, "r") as f:
     val_png_files = f.read().splitlines()
 
