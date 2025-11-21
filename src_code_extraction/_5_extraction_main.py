@@ -15,6 +15,6 @@ def extract_and_visualize(raw_data_dir, csv_data_dir):
 
 
 if __name__ == "__main__":
-    raw_data_dir = "/home/perception/mounted_hardisk/DeepIO/q_series/zips"
-    csv_data_dir = "/home/perception/mounted_hardisk/DeepIO/q_series/csvs_2"
+    raw_data_dir = "/home/perception/mounted_hardisk/DeepIO/q_series/zips" # <-- Update this with the zip file location
+    csv_data_dir = "/home/perception/mounted_hardisk/DeepIO/q_series/csvs_2" # <-- Update this with the location where you want to save the csvs
     extract_and_visualize(raw_data_dir, csv_data_dir)
